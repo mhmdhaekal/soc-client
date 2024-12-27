@@ -12,7 +12,7 @@ pub mod services {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut client = PacketServiceClient::connect("http://[::1]:50051").await?;
+    let mut client = PacketServiceClient::connect("http://10.100.0.163").await?;
     let (tx, rx) = mpsc::channel::<Packet>(10);
 
     let source_ip = local_ip()?;
